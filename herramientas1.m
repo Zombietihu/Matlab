@@ -1,4 +1,4 @@
-Im_RGB=imread('letras.jpg'); 
+Im_RGB=imread('HERRAMIENTAS.jpg'); 
 J = rgb2gray(Im_RGB);
 
 %imshow(Im_RGB)
@@ -10,7 +10,7 @@ Im_g = imfilter(J,g);
 g2 = fspecial('gaussian', [5 5],2);        %Filtro gausiiano con desv. est = 2, empleando funciones propias de matlab
 Im_g2 = imfilter (J, g2);
 %------------------------------------------------------------
-Im_bin=im2bw(Im_g,0.5); %Binarizar imagen
+Im_bin=im2bw(Im_g,0.6); %Binarizar imagen
 figure, imshow(Im_bin); %siguiente figura, para que no se sobre escriba
 Im_bin2=not(Im_bin); %Se invierte la imagen
 figure, imshow(Im_bin2) %Se muestra la imagen inversa en otra figura
