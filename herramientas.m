@@ -1,18 +1,18 @@
-length=10; tlevel=0.55;        %Define SE and percent threshold level
-A=imread('HERRAMIENTAS.jpg'); 
-subplot(2,3,1), imshow(A),title('Original')  %Read image and display
+length=10; tlevel=0.55;        
+A=imread('herramientasC.png'); 
+subplot(2,3,1), imshow(A),title('Original')  
 B=im2bw(A,tlevel); 
-subplot(2,3,2), imshow(~B),title('Binarizado Negado');%Threshold image and display
+subplot(2,3,2), imshow(~B),title('Binarizado Negado');
 SE=ones(2,length); 
-bw1=imerode(~B,SE);    %Erode vertical lines
-subplot(2,3,3), imshow(bw1),title('1a Erosión');%display result
+bw1=imerode(~B,SE);   
+subplot(2,3,3), imshow(bw1),title('1a Erosión');
 bw2=imerode(bw1,SE); 
-subplot(2,3,4), imshow(bw2),title('2a Erosión');          %Erode horizontal lines
+subplot(2,3,4), imshow(bw2),title('2a Erosión');         
 bw3=imdilate(bw2,SE);
-bw4=imdilate(bw3,SE);                 %Dilate back
-subplot(2,3,5), imshow(~bw4),title('Dilatada');          %Display
+bw4=imdilate(bw3,SE);                
+subplot(2,3,5), imshow(~bw4),title('Dilatada');        
 boundary=bwperim(bw4);
-[i,j]=find(boundary);                 %Superimpose boundaries
+[i,j]=find(boundary);                 
 subplot(2,3,6), imshow(A),title('Herramientas ubicadas'); 
 hold on; 
 plot(j,i,'r.');
