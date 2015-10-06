@@ -84,9 +84,22 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 I= handles.I;
-[ im_gray,Im_pasaBaja ] = filtroPros( I );
+[ im_gray,Im_pasaBaja, Im_pasaAlta, Im_gauss,Im_mediana, Im_media, Im_min, Im_max ] = filtroPros( I );
  axes(handles.axes1);
  imshow(im_gray);
  axes(handles.axes2);
  imshow(Im_pasaBaja);
-    imshow(Im_pasaBaja);
+ imshow(Im_pasaBaja);
+ axes(handles.axes3);
+ imshow(Im_pasaAlta);
+ axes(handles.axes4);
+ imshow(Im_gauss);
+ axes(handles.axes5);
+ imshow(Im_mediana);
+ axes(handles.axes6);
+ imshow(Im_media);
+ axes(handles.axes7);
+ imshow(Im_min);
+ axes(handles.axes9);
+ imshow(Im_max);
+   
