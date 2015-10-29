@@ -1,8 +1,8 @@
 
-A = imread('circulos.png');
+A = imread('coloredChips.png');
 %A = imread('Imagen1.jpg');
 imshow(A)
-Rmin = 5; %30
+Rmin = 10; %30
 Rmax = 200; %65
 [centersBright, radiiBright] = imfindcircles(A,[Rmin Rmax],'ObjectPolarity','bright');
 [centersDark, radiiDark] = imfindcircles(A,[Rmin Rmax],'ObjectPolarity','dark');

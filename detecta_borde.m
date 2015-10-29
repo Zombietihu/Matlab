@@ -1,8 +1,9 @@
 I=imread('cromosomas.tif');
 figure, imshow(I);
 
-bw1 = edge(I, 'sobel');
+
 bw2 = edge(I, 'canny');
+bw1 = edge(bw2, 'sobel');
 figure, imshow(bw1);
 figure, imshow(bw2);
 %CANNY:

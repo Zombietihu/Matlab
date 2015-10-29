@@ -1,4 +1,4 @@
-I=imread('circulos.png');
+I=imread('coloredChips.png');
 J=rgb2gray(I);
 %Filtro gradiente
 [Gx Gy] = imgradientxy(J);
