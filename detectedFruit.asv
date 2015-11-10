@@ -1,0 +1,42 @@
+function [ output_args ] = detectedFruit( I )
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
+
+gr=rgb2gray(I);     %Pasar a escala de grises
+bw=im2bw(gr,0.5);   %Binarizar
+bw2=bwperim(bw);    %Detectar Perimetro
+bw3=imfill(bw2,'holes');  		%Rellenar contenido de Perimetro
+bw4=imopen(bw3,ones(5));        %Aplicar apertura
+
+[L,num]=bwlabel(bw4);                                    		%Create labelled image
+s=regionprops(L,'area','perimeter');                    		%Calculate region properties
+for i=1:num                                             		%object’s area and perimeter     
+x(i)=s(i).Area;
+y(i)=s(i).Perimeter;
+form(i)=4.*pi.*x(i)./(y(i).^2);                         		%Calculate form factor
+end
+
+%%
+%MostrarImagen Mandarinas
+d= imdistline;
+delete(d);
+%MostrarImgen Naranjas
+min=radioN(1);
+max=radioN(end);
+[centers2, radii2] = imfindcircles(~bw4,[44 47], 'ObjectPolarity','dark', ...
+          'Sensitivity',0.95,'Method','twostage');
+Naranjas=length(centers2) 
+h=viscircles(centers2,radii2,'EdgeColor' , 'b');
+
+%%
+%MostrarImagen Mandarinas
+d= imdistline;
+delete(d);
+min=radioN(1);
+max=radioN(end);
+[centers2, radii2] = imfindcircles(~bw4,[29 30], 'ObjectPolarity','dark', ...
+          'Sensitivity',0.95,'Method','twostage');
+Mandarinas=length(centers2) 
+h=viscircles(centers2,radii2,'EdgeColor' , 'r');
+end
+

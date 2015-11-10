@@ -18,7 +18,7 @@ BW2 = imdilate(bw,SE);BW2 = imdilate(BW2,SE);BW2=imdilate(BW2,SE);imdilate(BW2,S
 %figure, imshow(BW2);
 %Obtener perimetro
 BW4=bwperim(~BW2);
-%figure;imshow(BW4);
+figure;imshow(BW4);
 %Rellenar
 BW5 = imfill(BW4,'holes');BW5 = imfill(BW5,'holes');BW5 = imfill(BW5,'holes');
 BW5=bwperim(BW5);BW5 = imfill(BW5,'holes');
