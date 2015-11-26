@@ -1,5 +1,5 @@
 
-A = imread('coloredChips.png');
+A = imread('ch14.jpg');
 %A = imread('Imagen1.jpg');
 imshow(A)
 Rmin = 10; %30
