@@ -1,6 +1,6 @@
 length=10; tlevel=0.55;        
 A=imread('herramientasC.png'); 
-subplot(2,3,1), imshow(A),title('Original')  
+subplot(), imshow(A),title('Original')  
 B=im2bw(A,tlevel); 
 subplot(2,3,2), imshow(~B),title('Binarizado Negado');
 SE=ones(2,length); 

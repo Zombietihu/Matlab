@@ -1,4 +1,4 @@
-I=imread('abichuela.jpg');
+I=imread('abich.jpg');
 %supervisado=ExtraeCorazon(I);
 mhu=FinalCorazon(I);
 j=1;
